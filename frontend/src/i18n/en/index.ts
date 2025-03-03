@@ -2,11 +2,11 @@ const translation = {
   translation: {
     signIn: {
       button: {
-        login: 'Login',
+        login: 'Sign in with Microsoft Entra ID',
       },
     },
     app: {
-      name: 'Bedrock Claude Chat',
+      name: 'Internal Chatbot',
       nameWithoutClaude: 'Bedrock Chat',
       inputMessage: 'Can I Help You?',
       starredBots: 'Starred Bots',

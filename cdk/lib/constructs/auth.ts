@@ -198,6 +198,16 @@ export class Auth extends Construct {
       }
     );
 
+
+    const standardGroup = new CfnUserPoolGroup(
+      this,
+      "StandardGroup",
+      {
+        groupName: "Standard",
+        userPoolId: userPool.userPoolId,
+      }
+    );
+
     if (props.autoJoinUserGroups.length >= 1) {
       /**
        * Create a Cognito trigger to add a new user to the group specified with `autoJoinUserGroups`.

@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import useLocalStorage from './useLocalStorage';
 import { ActiveModels } from '../@types/bot';
 import { toCamelCase } from '../utils/StringUtils';
+import useUser from './useUser';
 
 const MISTRAL_ENABLED: boolean =
   import.meta.env.VITE_APP_ENABLE_MISTRAL === 'true';
@@ -28,7 +29,7 @@ const useModelState = create<{
   modelId: Model;
   setModelId: (m: Model) => void;
 }>((set) => ({
-  modelId: 'claude-v3-haiku',
+  modelId: 'claude-v3.5-haiku',
   setModelId: (m) => {
     set({
       modelId: m,
@@ -36,7 +37,7 @@ const useModelState = create<{
   },
 }));
 
-const DEFAULT_MODEL: Model = 'claude-v3-haiku';
+const DEFAULT_MODEL: Model = 'claude-v3.5-haiku';
 
 // Store the Previous BotId
 const usePreviousBotId = (botId: string | null | undefined) => {
@@ -67,6 +68,8 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
   const { t } = useTranslation();
   const previousBotId = usePreviousBotId(botId);
 
+  const { isStandard } = useUser();
+
   const availableModels = useMemo<
     {
       modelId: Model;
@@ -75,6 +78,22 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
       description?: string;
     }[]
   >(() => {
+    if (isStandard) {
+      return [
+        {
+          modelId: 'claude-v3.5-haiku',
+          label: t('model.claude-v3.5-haiku.label'),
+          description: t('model.claude-v3.5-haiku.description'),
+          supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        },
+        {
+          modelId: 'claude-v3.5-sonnet',
+          label: t('model.claude-v3.5-sonnet.label'),
+          description: t('model.claude-v3.5-sonnet.description'),
+          supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        },
+      ];
+    }
     return !MISTRAL_ENABLED
       ? [
           {
@@ -156,7 +175,7 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
             supportMediaType: [],
           },
         ];
-  }, [t]);
+  }, [t, isStandard]);
 
   const [filteredModels, setFilteredModels] = useState(availableModels);
   const { modelId, setModelId } = useModelState();

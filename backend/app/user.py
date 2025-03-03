@@ -14,3 +14,7 @@ class User(BaseModel):
 
     def is_publish_allowed(self) -> bool:
         return self.is_admin() or "PublishAllowed" in self.groups
+
+    
+    def is_standard(self) -> bool:
+        return "Standard" in self.groups

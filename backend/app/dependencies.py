@@ -47,3 +47,14 @@ def check_publish_allowed(user: User = Depends(get_current_user)):
             status_code=status.HTTP_403_FORBIDDEN,
             detail="User is not allowed to publish bot.",
         )
+
+
+
+
+
+def check_model_access(user: User = Depends(get_current_user)):
+    if user.is_standard():
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="User does not have access to this feature.",
+        )
