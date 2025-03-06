@@ -87,9 +87,9 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
           supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
         },
         {
-          modelId: 'claude-v3.5-sonnet',
-          label: t('model.claude-v3.5-sonnet.label'),
-          description: t('model.claude-v3.5-sonnet.description'),
+          modelId: 'claude-v3.5-sonnet-v2',
+          label: t('model.claude-v3.5-sonnet-v2.label'),
+          description: t('model.claude-v3.5-sonnet-v2.description'),
           supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
         },
       ];
