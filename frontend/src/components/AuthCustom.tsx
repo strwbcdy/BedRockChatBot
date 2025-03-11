@@ -57,7 +57,7 @@ const AuthCustom: React.FC<Props> = ({ children }) => {
           </div>
         </div>
       ) : !authenticated ? (
-        <div className="flex flex-col items-center gap-4 content-center">
+        <div className="flex flex-col items-center min-h-screen gap-4 content-center justify-center">
           <div style={{ maxWidth: '200px' }}>
           <img src="/images/trellis_name.png" alt="Trellis logo"/>
           </div>
