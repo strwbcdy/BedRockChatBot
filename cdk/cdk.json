@@ -77,7 +77,7 @@
     "enableRagReplicas": true,
     "enableBedrockCrossRegionInference": true,
     "enableLambdaSnapStart": true,
-    "alternateDomainName": "chat.test.yourtrellis.com",
-    "hostedZoneId": "Z0736348T61EAAU85BW9"
+    "alternateDomainName": "chat.yourtrellis.com",
+    "hostedZoneId": "Z3EISYNDOE38GG"
   }
 }
