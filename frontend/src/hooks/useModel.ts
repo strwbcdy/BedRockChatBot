@@ -29,7 +29,7 @@ const useModelState = create<{
   modelId: Model;
   setModelId: (m: Model) => void;
 }>((set) => ({
-  modelId: 'claude-v3.5-haiku',
+  modelId: 'claude-v3-haiku',
   setModelId: (m) => {
     set({
       modelId: m,
@@ -37,7 +37,7 @@ const useModelState = create<{
   },
 }));
 
-const DEFAULT_MODEL: Model = 'claude-v3.5-haiku';
+const DEFAULT_MODEL: Model = 'claude-v3-haiku';
 
 // Store the Previous BotId
 const usePreviousBotId = (botId: string | null | undefined) => {
@@ -81,9 +81,9 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
     if (isStandard) {
       return [
         {
-          modelId: 'claude-v3.5-haiku',
-          label: t('model.claude-v3.5-haiku.label'),
-          description: t('model.claude-v3.5-haiku.description'),
+          modelId: 'claude-v3-haiku',
+          label: t('model.claude-v3-haiku.label'),
+          description: t('model.claude-v3-haiku.description'),
           supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
         },
         {
