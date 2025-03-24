@@ -62,10 +62,10 @@
       {
         "service": "oidc", 
         "serviceName": "MicrosoftEntraID", 
-        "secretName": "deploytotest"
+        "secretName": "chatbot/sso-client"
       }
     ],
-    "userPoolDomainPrefix": "deploytotest",
+    "userPoolDomainPrefix": "chatbotsso",
     "allowedSignUpEmailDomains": [],
     "autoJoinUserGroups": ["Standard"],
     "selfSignUpEnabled": true,
