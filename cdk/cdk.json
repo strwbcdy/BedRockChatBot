@@ -62,7 +62,7 @@
       {
         "service": "oidc", 
         "serviceName": "MicrosoftEntraID", 
-        "secretName": "chatbot/sso-client"
+        "secretName": "chatbotssoclient"
       }
     ],
     "userPoolDomainPrefix": "chatbotsso",
