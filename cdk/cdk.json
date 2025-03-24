@@ -52,7 +52,7 @@
     "@aws-cdk/core:includePrefixInUniqueNameGeneration": true,
     "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": true,
     "enableMistral": false,
-    "bedrockRegion": "us-east-1",
+    "bedrockRegion": "ap-southeast-2",
     "allowedIpV4AddressRanges": ["0.0.0.0/1", "128.0.0.0/1"],
     "allowedIpV6AddressRanges": [
       "0000:0000:0000:0000:0000:0000:0000:0000/1",
@@ -62,10 +62,10 @@
       {
         "service": "oidc", 
         "serviceName": "MicrosoftEntraID", 
-        "secretName": "testingsso030325"
+        "secretName": "deploytotest"
       }
     ],
-    "userPoolDomainPrefix": "testingsso030325",
+    "userPoolDomainPrefix": "deploytotest",
     "allowedSignUpEmailDomains": [],
     "autoJoinUserGroups": ["Standard"],
     "selfSignUpEnabled": true,
@@ -77,7 +77,7 @@
     "enableRagReplicas": true,
     "enableBedrockCrossRegionInference": true,
     "enableLambdaSnapStart": true,
-    "alternateDomainName": "",
+    "alternateDomainName": "chat.test.yourtrellis.com",
     "hostedZoneId": ""
   }
 }
